@@ -1,4 +1,4 @@
-const axios = require ("axios")
+const axios = require("axios");
 const {
   GraphQLObjectType,
   GraphQLList,
@@ -36,21 +36,26 @@ const RootQuery = new GraphQLObjectType({
       type: CustomerType,
       args: {
         id: { type: GraphQLString },
-      },
+      }, 
       resolve(parentValue, args) {
         // for (let i = 0; i < customers.length; i++) {
         //   if (customers[i].id == args.id) {
         //     return customers[i];
         //   }
         // }
+        return axios
+          .get("http://localhost:3000/customers/"+ args.id)
+          .then((res) => res.data);
       },
     },
-    customers:{
-        type: new GraphQLList(CustomerType),
-        resolve(parentValue, args){
-            return customers
-        }
-    }
+    customers: {
+      type: new GraphQLList(CustomerType),
+      resolve(parentValue, args) {
+        return axios
+          .get("http://localhost:3000/customers/")
+          .then((res) => res.data);
+      },
+    },
   },
 });
 
