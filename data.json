@@ -1,28 +1,16 @@
 {
   "customers": [
     {
+      "name": "Why Null",
+      "email": "jonathan@gmail.com",
       "id": "1",
-      "name": "John Doe",
-      "email": "jdoe@gmail.com",
-      "age": 35
-    },
-    {
-      "id": "2",
-      "name": "Jane Doe",
-      "email": "janedoe@gmail.com",
-      "age": 25
+      "age": 39
     },
     {
       "id": "3",
       "name": "Jack Doe",
       "email": "jackdoe@gmail.com",
       "age": 15
-    },
-    {
-      "id": "4",
-      "name": "Juliet Doe",
-      "email": "julietdoe@gmail.com",
-      "age": 35
     },
     {
       "name": "Abdul-Qudus",
