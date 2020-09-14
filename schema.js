@@ -36,15 +36,10 @@ const RootQuery = new GraphQLObjectType({
       type: CustomerType,
       args: {
         id: { type: GraphQLString },
-      }, 
+      },
       resolve(parentValue, args) {
-        // for (let i = 0; i < customers.length; i++) {
-        //   if (customers[i].id == args.id) {
-        //     return customers[i];
-        //   }
-        // }
         return axios
-          .get("http://localhost:3000/customers/"+ args.id)
+          .get("http://localhost:3000/customers/" + args.id)
           .then((res) => res.data);
       },
     },
